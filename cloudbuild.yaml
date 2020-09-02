@@ -5,7 +5,7 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/desafio_hpa_golang:latest', '-t', 'gcr.io/$PROJECT_ID/desafio_hpa_golang:${_DESAFIO_HPA_GOLANG_VERSION}', '.']
 
-- id: "Rodando o teste da função greetings"
+- id: "Rodando o teste"
   name: 'gcr.io/cloud-builders/docker'
   args: ['run', '-t', '--name', 'desafio_hpa_golang', 'gcr.io/$PROJECT_ID/desafio_hpa_golang:latest', 'go', 'test']
 
@@ -13,4 +13,4 @@ steps:
 images:
 - 'gcr.io/$PROJECT_ID/desafio_hpa_golang:latest'
 - 'gcr.io/$PROJECT_ID/desafio_hpa_golang:${_DESAFIO_HPA_GOLANG_VERSION}'
-tags: ['cloud-builders-desafio-ci-golang']
+tags: ['cloud-builders-desafio-hpa-golang']
