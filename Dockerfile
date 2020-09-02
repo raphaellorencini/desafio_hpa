@@ -9,4 +9,4 @@ RUN go build main.go
 
 EXPOSE 8000
 
-ENTRYPOINT ["./main"]
+CMD ["./main"]
